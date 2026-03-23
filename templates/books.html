@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<h2 style="text-align:center;">📚 Book List</h2>
+
+<table>
+<tr>
+    <th>ID</th>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Action</th>
+</tr>
+
+{% for book in books %}
+<tr>
+    <td>{{ book[0] }}</td>
+    <td>{{ book[1] }}</td>
+    <td>{{ book[2] }}</td>
+    <td>
+        <a href="/issue/{{ book[0] }}">Issue</a>
+    </td>
+</tr>
+{% endfor %}
+</table>

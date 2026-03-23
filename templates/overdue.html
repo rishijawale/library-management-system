@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<h2 style="text-align:center;">⏰ Overdue Books</h2>
+
+<table>
+<tr>
+    <th>Loan ID</th>
+    <th>User ID</th>
+    <th>Book ID</th>
+    <th>Due Date</th>
+</tr>
+
+{% for loan in loans %}
+<tr>
+    <td>{{ loan[0] }}</td>
+    <td>{{ loan[1] }}</td>
+    <td>{{ loan[2] }}</td>
+    <td>{{ loan[3] }}</td>
+</tr>
+{% endfor %}
+</table>
+
+<div style="text-align:center;">
+    <a href="/dashboard">⬅ Back to Dashboard</a>
+</div>

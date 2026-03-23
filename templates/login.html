@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<div class="container">
+    <h2>📚 Library Login</h2>
+
+    <form method="POST">
+        <input type="text" name="email" placeholder="Enter Email" required>
+        <input type="password" name="password" placeholder="Enter Password" required>
+        <button type="submit">Login</button>
+    </form>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <p style="color:red;">{{ messages[0] }}</p>
+      {% endif %}
+    {% endwith %}
+</div>
